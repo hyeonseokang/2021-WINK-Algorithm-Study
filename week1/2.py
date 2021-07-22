@@ -9,19 +9,19 @@ def progress_time(progress, speed):
 def solution(progresses, speeds):
     answer = []
     
-    prev_time = progress_time(progresses[0], speeds[0])
+    prev_t = progress_time(progresses[0], speeds[0])
     prev_index = 0
-    total_time = prev_time
+    t = prev_t
     
-    for i in range(1, len(progresses)):
-        current_time = progress_time(progresses[i], speeds[i])
+    for i, (p, s) in enumerate(zip(progresses, speeds)):
+        current_t = progress_time(p, s)
         
-        if current_time - total_time > 0:
+        if current_t > t:
             answer.append(i - prev_index)
             prev_index = i
-            total_time = current_time
+            t = current_t
 
-        prev_time = current_time
+        prev_t = current_t
     
     answer.append(len(progresses) - prev_index)
         
