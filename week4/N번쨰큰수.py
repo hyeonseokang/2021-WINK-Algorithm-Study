@@ -1,10 +1,11 @@
-n, m = map(int, input().split())
-board = [list(map(int, input().split())) for _ in range(n)]
+# 백준 N번째 큰수
+# https://www.acmicpc.net/problem/2075
 
-# for _ in range(n):
-#     numbers = []
-#     for __ in range(n):
-#         num = int(input())
-#         numbers.append(num)
-#     m.append(numbers)
+n = int(input())
+numbers = []
 
+for i in range(n):
+    numbers += list(map(int, input().split()))
+    numbers = sorted(numbers, reverse=True)[:n]
+
+print(numbers[-1])
