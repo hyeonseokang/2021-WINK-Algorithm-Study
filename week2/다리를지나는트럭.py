@@ -5,13 +5,11 @@ def solution(bridge_length, weight, truck_weights):
     count = 1
     
     c_weight = 0
-    c_length = 0
     c_trucks = []
 
     while True:
         if c_trucks == [] and truck_weights == []:
             return count
-            break
             
         if len(truck_weights) > 0 and truck_weights[0] + c_weight <= weight:
             truck = truck_weights.pop(0)

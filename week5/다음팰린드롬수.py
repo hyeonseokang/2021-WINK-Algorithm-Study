@@ -7,8 +7,7 @@ k = nLen//2
 
 if nLen == 1:
     print(N)
-elif int(N[k-1::-1]) >= int(N[nLen-k:nLen]):
-    print(N[:nLen-k] + N[k-1::-1])
 else:
-    N = str(int(N) + 10**k)
+    if int(N[k-1::-1]) < int(N[nLen-k:nLen]): 
+        N = str(int(N) + 10**k)
     print(N[:nLen-k] + N[k-1::-1])
